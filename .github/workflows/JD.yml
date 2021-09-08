@@ -1,8 +1,10 @@
 name: JD_DailyBonus.js Package
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+    # 这里的时间为 UTC 时间，在 0 点运行，则在北京时间早上 8 点运行
 
 jobs:
   publish-npm:
